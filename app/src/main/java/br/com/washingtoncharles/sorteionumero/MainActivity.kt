@@ -2,9 +2,9 @@ package br.com.washingtoncharles.sorteionumero
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.TextView
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,8 +15,11 @@ class MainActivity : AppCompatActivity() {
 
     fun cliqueBotao(view: View){
         //Log.i("BOTAO","Botão foi pressionado")
-        var texto = findViewById(R.id.textoExibicao) as TextView
-        texto.setText("Texto alterado")
+        var texto = findViewById(R.id.textoSorteio) as TextView
+        var numero = findViewById(R.id.numeroExibicao) as TextView
+        var numeroSorteado = Random().nextInt(11)
+        texto.setText("O número sorteado foi:")
+        numero.setText("$numeroSorteado")
 
     }
 }
